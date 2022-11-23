@@ -9,7 +9,7 @@ import { Item } from '../interfaces/item';
 })
 export class ItemService {
 
-    private url = 'api/items';
+    private url = 'https://random-data-api.com/api/company/random_company';
     public collectionSize: number = 0;
 
     constructor(private http: HttpClient) {
@@ -21,7 +21,7 @@ export class ItemService {
     };
 
     public getItem(id:number): Observable<Item>  {
-        const urlID = `${this.url}/${id}`;
+        const urlID = `${this.url}?${id}`;
         return this.http.get<Item>(urlID);
     };
 }
