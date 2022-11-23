@@ -1,0 +1,32 @@
+.pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 94px;
+    &__button {
+        background-color: transparent;
+        path {
+            transition: .2s;
+        }
+        &:hover {
+            path {
+                fill: #ff2929;
+            }
+        }
+        &:active {
+            path {
+                opacity: 50%;
+            }
+        }
+        &-nonactive {
+            path {
+                fill: #3C474C;
+            }
+        }
+    }
+    &__number {
+        font-size: 16px;
+        line-height: 32px;
+    }
+}

@@ -1,0 +1,94 @@
+@mixin adaptive-value-fromMax-to768($property, $startSize, $minSize) {
+    $addSize: $startSize - $minSize;
+    #{$property}: $startSize + px;
+    @media screen and (max-width: 1920px) {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 768px) / (1920 - 768)));
+    }
+}
+
+.card {
+    width: 699px;
+    padding: 52px 63px;
+    &__top {
+        margin-bottom: 53px;
+    }
+    &__button {
+        display: inline-block;
+        background-color: transparent;
+        margin-bottom: 22px;
+        opacity: 100%;
+        font-size: 14px;
+        line-height: 16px;
+        color: #2962FF;
+        transition: .2s;
+        svg {
+            margin-right: 7.33px;
+            path {
+                transition: .2s;
+            }
+        }
+        &:hover, &:focus {
+            color: #ff2929;
+            path {
+                fill: #ff2929;
+            }
+        }
+        &:active {
+            opacity: 50%;
+        }
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 33px;
+    }
+    &__type {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    &__text {
+        font-size: 16px;
+        line-height: 24px;
+        color: #2962FF;
+    }
+    &__port {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+.card-body {
+    margin-bottom: 40px;
+    display: flex;
+
+    &__text-block {
+        &_1 {
+            flex-basis: 19%;
+        }
+        &_2 {
+            flex-basis: 25%;
+            flex-grow: 1;
+        }
+        &_3 {
+            flex-basis: 19%;
+        }
+        &_4 {
+            flex-basis: 15%;
+        }
+    }
+}
+table {
+    width: 246px;
+}
+
+.card-bottom {
+    &__title {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 22px;
+    }
+    &__description {
+        font-size: 16px;
+        line-height: 32px;
+        color: #2962FF;
+    }
+}

@@ -1,0 +1,108 @@
+.filter {
+    width: 393px;
+    height: 100%;
+    border-left: 1px solid #A5A5A5;
+    padding: 52px 32px;
+    &__subtitle {
+        font-size: 14px;
+        line-height: 16px;
+        color: rgba(0, 0, 0, 0.4);
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 35px;
+    }
+}
+.search {
+    width: 100%;
+    margin-bottom: 41px;
+
+    &__input {
+        width: 100%;
+        padding: 7px 2px;
+        border-bottom: 1px solid #A5A5A5;
+        font-size: 16px;
+        line-height: 19px;
+        caret-color: #347CFF;
+
+        &::placeholder {
+            font-size: 16px;
+            line-height: 19px;
+            color: rgba(0, 0, 0, 0.4);
+        }
+        
+    }
+}
+.list {
+    margin-bottom: 41px;
+    &__select {
+        width: 100%;
+        padding: 0px 2px 7px 2px;
+        border-bottom: 1px solid #A5A5A5;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba(0, 0, 0, 0.87);
+        transition: .2s;
+        &-active {
+            border-bottom: 1px solid #347CFF;
+        }
+        &:hover {
+            cursor: pointer;
+            color: #347CFF;
+        }
+    }
+    &__checkboxes {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        padding: 15px 17px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23), 0px 3px 6px rgba(0, 0, 0, 0.16);
+        &-active {
+            display: flex;
+        }
+    }
+    &__checkbox {
+        margin-bottom: 16px;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        input {
+            width: 18px;
+            height: 18px;
+            margin-right: 13px;
+            font-size: 16px;
+            line-height: 19px;
+            color: #000000;
+        }
+    }
+}
+.radio {
+    &__title {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 25px;
+    }
+    &__checked-box {
+        width: 100%;
+    }
+    &__item {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-bottom: 20px;
+        input {
+            width: 16px;
+            height: 16px;
+            margin-right: 28px;
+        }
+        label {
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+}

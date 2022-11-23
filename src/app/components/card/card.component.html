@@ -1,0 +1,48 @@
+<div class="card" *ngIf="item">
+    <div class="card__top">
+        <button class="card__button" (click)="goBack()">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.66667 4.41665L2.5675 4.41665L5.82834 1.15581L5 0.333313L0.333336 4.99998L5 9.66665L5.8225 8.84415L2.5675 5.58331L9.66667 5.58331V4.41665Z" fill="#2962FF"/>
+            </svg>                
+            <span class="card__back">Вернуться</span>
+        </button>
+        <h2 class="card__title">{{item.business_name}}</h2>
+    </div>
+    <div class="card__body card-body">
+
+        <div class="card-body__text-block card-body__text-block_1">
+            <p class="card__type">Type</p>
+        </div>
+        <div class="card-body__text-block card-body__text-block_2">
+            <p class="card__text">{{item.type}}</p>
+        </div>
+        <div class="card-body__text-block card-body__text-block_3">
+            <p class="card__type">Suffiz</p>
+        </div>
+        <div class="card-body__text-block card-body__text-block_4">
+            <p class="card__text">{{item.suffix}}</p>
+        </div>
+        
+    </div>
+    <div class="card__body card-body">
+
+        <div class="card-body__text-block card-body__text-block_1">
+            <p class="card__type">Industry</p>
+        </div>
+        <div class="card-body__text-block card-body__text-block_2">
+            <p class="card__text">{{item.industry}}</p>
+        </div>
+
+        <div class="card-body__text-block card-body__text-block_3">
+            <p class="card__type">CatchPhrase</p>
+        </div>
+        <div class="card-body__text-block card-body__text-block_4">
+            <p class="card__text">{{item.catch_phrase}}</p>
+        </div>
+        
+    </div>
+    <div class="card__bottom card-bottom">
+        <p class="card-bottom__title">Addres</p>
+        <p class="card-bottom__description">{{item.full_address}}</p>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+@mixin adaptive-value-fromMax-to768($property, $startSize, $minSize) {
+    $addSize: $startSize - $minSize;
+    #{$property}: $startSize + px;
+    @media screen and (max-width: 1920px) {
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 768px) / (1920 - 768)));
+    }
+}
+
+.list {
+    &__container {
+        display: flex;
+    }
+    &__section {
+        padding: 52px 63px;
+        flex-grow: 1;
+    }
+}
+.section {
+    &__title {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 32px;
+        color: rgba(0, 0, 0, 0.87);
+        margin-bottom: 64px;
+    }
+    &__container {
+        height: 690px;
+        margin-bottom: 62px;
+    }
+}
+.item {
+    border-bottom: 1px solid #A5A5A5;
+    margin-bottom: 40px;
+
+    &__top {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-bottom: 29px;
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        display: inline-block;
+        margin-right: 23px;
+    }
+    &__link {
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+        opacity: 100%;
+        transition: .2s;
+        path {
+            transition: .2s;
+        }
+        &:hover, &:focus {
+            path {
+                fill: #ff2929;
+            }
+        }
+        &:active {
+            path {
+                opacity: 50%;
+            }
+        }
+    }
+    &__body {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 29px;
+    }
+    &__type {
+        font-size: 16px;
+        line-height: 24px;
+        @include adaptive-value-fromMax-to768(margin-right, 104, 52);
+        @media screen and (max-width: 768px) {
+            margin-right: 52px;
+        }
+    }
+    &__text {
+        font-size: 16px;
+        line-height: 24px;
+        color: #2962FF;
+        width: 321px;
+    }
+    &__port {
+        font-size: 16px;
+        line-height: 24px;
+        @include adaptive-value-fromMax-to768(margin-right, 104, 52);
+        @media screen and (max-width: 768px) {
+            margin-right: 52px;
+        }
+    }
+}
+
+.item-body {
+    &__block{
+        &_left {
+            flex: 0 1 32.38%;
+            @media screen and (max-width: 1600px) {
+                flex: 0 1 50%;
+            }
+        }
+    }
+}

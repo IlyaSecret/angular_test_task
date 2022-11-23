@@ -1,0 +1,35 @@
+<div class="list">
+    <div class="list__container">
+        <section class="list__section section">
+            <h1 class="section__title">Companies of SpaceX Ships</h1>
+            <div class="section__container">
+                <div class="item" *ngFor="let item of items | search:searchItem | search2:searchType | search3:searchSuffix">
+                    <div class="item__top">
+                        <h2 class="item__title">{{item.business_name}}</h2>
+                        <a class="item__link" routerLink="/card/{{item.id}}">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 9L12.17 9L6.58 14.59L8 16L16 8L8 0L6.59 1.41L12.17 7L0 7L0 9Z" fill="#2962FF"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="item__body item-body">
+            
+                        <div class="item-body__block item-body__block_left">
+                            <span class="item__type">Тип</span>
+                            <span class="item__text">{{item.type}}</span> 
+                        </div>
+                        <div class="item-body__block item-body__block_right">
+                            <span class="item__port">Суффикс</span>
+                            <span class="item__text">{{item.suffix}}</span> 
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <app-pagination [amount2]="collectionSize" [amount1]="page" (changePage)="getOtherItems($event)"></app-pagination>
+        </section>
+        <aside class="list__aside">
+            <app-filter [arrItems]="items" (event)="getFromFilter($event)" (event2)="getFromFilter2($event)" (event3)="getFromFilter3($event)"></app-filter> 
+        </aside>
+    </div>   
+</div>

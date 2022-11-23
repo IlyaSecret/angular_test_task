@@ -1,0 +1,33 @@
+<div class="filter">
+    <h3 class="filter__title">Фильтры</h3>
+    <div class="filter__search search">
+        <input id="search-box" placeholder="Название" class="search__input" [(ngModel)]="searchItem" (input)="sendToList()"/>
+    </div>
+    <div class="filter__list list">
+        <span class="filter__subtitle">Тип</span>
+        <div class="list__wrap">
+            <div class="list__select" *ngIf="searchType.length == 0" (click)="openCheckList($event)">
+                Выберите из списка
+            </div>
+            <div class="list__select list__select-active"  *ngIf="searchType.length > 0" (click)="openCheckList($event)">
+                Выбрано {{searchType.length}}
+            </div>
+            <div class="list__checkboxes">
+                <div *ngFor="let item of checkboxArr">
+                    <label class="list__checkbox">
+                        <input type="checkbox" name="checkbox" (change)="onCheckboxClick($event)"/><span>{{item}}</span>
+                    </label> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filter__radio radio">
+        <p class="radio__title">Суффикс</p>
+        <div class="radio__checked-box">
+            <div class="radio__item" *ngFor="let item of radioArr">
+                <input type="radio" name="radio" value="item.suffix" (click)="onRadioClick($event)">
+                <label >{{item}}</label>
+            </div>
+        </div>
+    </div>
+</div>
